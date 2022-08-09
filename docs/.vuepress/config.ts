@@ -1,9 +1,15 @@
 import { defineUserConfig } from "@vuepress/cli";
 import { defaultTheme } from "@vuepress/theme-default";
 
-import navbar from "./navbar";
-import sidebar from "./sidebar";
-import notFound from "./notFound";
+import {
+	locales,
+	navbartw,
+	navbaren,
+	sidebartw,
+	sidebaren,
+	notFound,
+	plugins,
+} from "./configs";
 
 const config = defineUserConfig({
 	// 設定檔
@@ -24,59 +30,53 @@ const config = defineUserConfig({
 		],
 	],
 
-	locales: {
-		"/": {
-			lang: "zh-TW",
-			title: "夜辰個人網站",
-			description: "夜辰個人網站",
-		},
-		"/en/": {
-			lang: "en-US",
-			title: "Night Star Blog",
-			description: "Night Star Blog",
-		},
-	},
+	locales,
 
 	// theme and its config
 	theme: defaultTheme({
 		home: "/",
 		logo: "https://avatars.githubusercontent.com/u/57443207?v=4",
-		navbar,
-		sidebar,
+
 		sidebarDepth: 3,
 		repo: "https://github.com/Night-Star04/Night-Star04.github.io",
 		docsRepo: "https://github.com/Night-Star04/Night-Star04.github.io",
-		docsBranch: "master",
+		docsBranch: "main",
 		docsDir: "docs",
-
 		editLink: true,
 		editLinkPattern: ":repo/edit/:branch/:path",
-		editLinkText: "在 GitHub 上編輯此頁面",
-
 		lastUpdated: true,
-		lastUpdatedText: "最後更新:",
-
 		contributors: true,
-		contributorsText: "貢獻者",
-
-		backToHome: "回到首頁",
-		notFound,
-
-		openInNewWindow: "在新視窗中開啟",
-		toggleColorMode: "切換顏色模式",
-		toggleSidebar: "切換導覽列",
-		tip: "提示",
-		warning: "注意",
-		danger: "警告",
 
 		locales: {
-			"/": { selectLanguageText: "選擇語言", selectLanguageName: "中文" },
+			"/": {
+				notFound,
+				navbar: navbartw,
+				sidebar: sidebartw,
+				selectLanguageText: "選擇語言",
+				selectLanguageName: "繁體中文",
+				lastUpdatedText: "最後更新",
+				editLinkText: "在 GitHub 上編輯此頁面",
+				contributorsText: "貢獻者",
+				backToHome: "回到首頁",
+				toggleColorMode: "切換顏色模式",
+				openInNewWindow: "在新視窗中開啟",
+				toggleSidebar: "切換導覽列",
+				tip: "提示",
+				warning: "注意",
+				danger: "警告",
+			},
 			"/en/": {
+				navbar: navbaren,
+				sidebar: sidebaren,
 				selectLanguageText: "Select Language",
 				selectLanguageName: "English",
+				editLinkText: "Edit this page on GitHub",
 			},
 		},
 	}),
+
+	// plugins config
+	plugins,
 });
 
 export default config;

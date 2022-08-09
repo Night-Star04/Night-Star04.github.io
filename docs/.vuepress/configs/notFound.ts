@@ -1,4 +1,4 @@
-const notFound = [
+export const notFound = [
 	"很抱歉，找不到此頁面。",
 	"你發現了一個未知的座標",
 	"沒有找到此頁面",

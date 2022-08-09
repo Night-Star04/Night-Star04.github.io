@@ -1,4 +1,4 @@
-name: docs
+name: VuePress Subordinate
 
 on:
   # 每當 push 到 main 分支時觸發部署

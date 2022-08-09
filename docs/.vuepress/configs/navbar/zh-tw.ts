@@ -1,6 +1,6 @@
 import type { NavbarConfig } from "@vuepress/theme-default";
 
-const navbar: NavbarConfig = [
+export const navbartw: NavbarConfig = [
 	{
 		text: "關於本人",
 		children: [
@@ -23,5 +23,3 @@ const navbar: NavbarConfig = [
 		],
 	},
 ];
-
-export default navbar;

@@ -1,6 +1,6 @@
 import type { SidebarConfig } from "@vuepress/theme-default";
 
-const sidebar: SidebarConfig = {
+export const sidebartw: SidebarConfig = {
 	"/": [
 		{
 			text: "首頁",
@@ -15,20 +15,4 @@ const sidebar: SidebarConfig = {
 			],
 		},
 	],
-	"/en/": [
-		{
-			text: "Home",
-			collapsible: true,
-			children: ["/en/"],
-		},
-		{
-			text: "Project",
-			collapsible: true,
-			children: [
-				{ text: "Home", link: "/en/Project/" },
-			],
-		},
-	],
 };
-
-export default sidebar;
